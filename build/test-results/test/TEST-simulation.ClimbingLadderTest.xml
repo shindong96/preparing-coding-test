@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="simulation.ClimbingLadderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-30T12:37:23" hostname="172-15-6-168.lightspeed.stlsmo.sbcglobal.net" time="0.056">
+  <properties/>
+  <testcase name="check()" classname="simulation.ClimbingLadderTest" time="0.056"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
