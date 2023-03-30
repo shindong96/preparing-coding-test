@@ -1,2 +1,0 @@
-simulation/ClimbingLadder.java
- simulation.ClimbingLadder
