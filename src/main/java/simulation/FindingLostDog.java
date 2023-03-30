@@ -36,7 +36,8 @@ public class FindingLostDog {
             }
         }
 
-        for (int i = 0; i < TIME_LIMIT; i++) {
+        int i;
+        for (i = 0; i < TIME_LIMIT; i++) {
             if (hyunSu.get(0).equals(dog.get(0)) &&
                     hyunSu.get(1).equals(dog.get(1))) {
                 break;
@@ -68,6 +69,11 @@ public class FindingLostDog {
 
             answer++;
         }
+
+        if (i == TIME_LIMIT) {
+            return 0;
+        }
+        
         return answer;
     }
 }
