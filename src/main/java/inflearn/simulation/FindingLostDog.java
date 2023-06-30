@@ -1,4 +1,4 @@
-package simulation;
+package inflearn.simulation;
 
 // 3번 문제
 
@@ -73,7 +73,7 @@ public class FindingLostDog {
         if (i == TIME_LIMIT) {
             return 0;
         }
-        
+
         return answer;
     }
 }

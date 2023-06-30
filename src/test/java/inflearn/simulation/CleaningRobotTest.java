@@ -1,4 +1,4 @@
-package simulation;
+package inflearn.simulation;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

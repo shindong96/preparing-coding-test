@@ -1,4 +1,4 @@
-package hashing;
+package inflearn.hashing;
 
 import java.util.HashMap;
 import java.util.Map;

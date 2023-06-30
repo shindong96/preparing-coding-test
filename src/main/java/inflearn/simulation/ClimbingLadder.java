@@ -1,4 +1,4 @@
-package simulation;
+package inflearn.simulation;
 
 // 1번 사다리 타기
 
