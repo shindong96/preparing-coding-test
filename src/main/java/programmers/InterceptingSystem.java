@@ -1,7 +1,7 @@
 package programmers;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class InterceptingSystem {
 
@@ -16,65 +16,23 @@ public class InterceptingSystem {
     }
 
     public int solution(int[][] targets) {
-        final ArrayList<Missile> interceptingMissiles = new ArrayList<>();
-        final ArrayList<Missile> missiles = new ArrayList<>();
+        int end = 0;
+        int answer = 0;
+
+        Arrays.sort(targets, Comparator.comparingInt(o -> o[1]));
 
         for (int[] target : targets) {
-            missiles.add(new Missile(target[0], target[1]));
-        }
-        Collections.sort(missiles);
+            int s = target[0];
+            int e = target[1];
 
-        for (Missile missile : missiles) {
-            boolean canIntercept = false;
-            for (Missile interceptingMissile : interceptingMissiles) {
-                if (interceptingMissile.canIntercept(missile)) {
-                    interceptingMissile.setMin(Math.max(interceptingMissile.min, missile.min));
-                    interceptingMissile.setMax(Math.min(interceptingMissile.max, missile.max));
-                    canIntercept = true;
-                    break;
-                }
-            }
-
-            if (!canIntercept) {
-                interceptingMissiles.add(missile);
+            if (s < end) {
+                continue;
+            } else {
+                end = e;
+                answer++;
             }
         }
 
-        for (Missile interceptingMissile : interceptingMissiles) {
-            System.out.println("(" + interceptingMissile.min + "," + interceptingMissile.max + ")");
-        }
-        return interceptingMissiles.size();
-    }
-
-    class Missile implements Comparable<Missile> {
-
-        int min;
-        int max;
-
-        public Missile(final int min, final int max) {
-            this.min = min;
-            this.max = max;
-        }
-
-        public boolean canIntercept(Missile missile) {
-            return !(this.max <= missile.min || this.min >= missile.max);
-        }
-
-        public int getSize() {
-            return max - min;
-        }
-
-        public void setMin(final int min) {
-            this.min = min;
-        }
-
-        public void setMax(final int max) {
-            this.max = max;
-        }
-
-        @Override
-        public int compareTo(final Missile missile) {
-            return Integer.compare(this.getSize(), missile.getSize());
-        }
+        return answer;
     }
 }
